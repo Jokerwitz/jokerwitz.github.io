@@ -50,10 +50,17 @@ const skills = [
       row.appendChild(header);
   
       data.forEach((player, index) => {
-        const td = document.createElement('td');
-        const rankEmoji = rankingEmojis[index]; // Get the emoji for rank
-        td.textContent = `${rankEmoji} ${player.player.username} (${player.data.gained})`;
-        row.appendChild(td);
+        // If gained is 0, show N/A instead of player details
+        if (player.data.gained === 0) {
+          const td = document.createElement('td');
+          td.textContent = "N/A";
+          row.appendChild(td);
+        } else {
+          const td = document.createElement('td');
+          const rankEmoji = rankingEmojis[index]; // Get the emoji for rank
+          td.textContent = `${rankEmoji} ${player.player.username} (${player.data.gained})`;
+          row.appendChild(td);
+        }
       });
   
       table.appendChild(row);
