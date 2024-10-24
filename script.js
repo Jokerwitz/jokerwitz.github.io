@@ -64,7 +64,7 @@ const skills = [
     table.innerHTML = ''; // Clear table before populating
     for (let i = 0; i < skills.length; i++) {
       await fetchWiseOldManData('skill', skills[i], 'skillsSection', 'skillsTable');
-      await delay(100); // Ensure we're staying under the API rate limit
+      await delay(50); // Ensure we're staying under the API rate limit
     }
   }
   
@@ -74,7 +74,7 @@ const skills = [
     table.innerHTML = ''; // Clear table before populating
     for (let i = 0; i < bosses.length; i++) {
       await fetchWiseOldManData('boss', bosses[i], 'bossesSection', 'bossesTable');
-      await delay(100); // Ensure we're staying under the API rate limit
+      await delay(50); // Ensure we're staying under the API rate limit
     }
   }
   
@@ -84,7 +84,7 @@ const skills = [
     table.innerHTML = ''; // Clear table before populating
     for (let i = 0; i < activities.length; i++) {
       await fetchWiseOldManData('activity', activities[i], 'activitiesSection', 'activitiesTable');
-      await delay(100); // Ensure we're staying under the API rate limit
+      await delay(50); // Ensure we're staying under the API rate limit
     }
   }
   
