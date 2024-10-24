@@ -3,17 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viking Clans Highscores</title>
+  <title>Viking's Hall of Fame</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <img src="path_to_viking_clans_logo.png" alt="Viking Clans Logo" id="logo">
-    <h1>Viking Clans Highscores</h1>
+    <!-- <img src="path_to_viking_clans_logo.png" alt="Viking Clans Logo" id="logo"> -->
+    <h1>Viking's Hall of Fame</h1>
   </header>
 
   <main>
-    <button id="loadHighscoresBtn">Load Highscores</button>
+    <div id="controls">
+      <button id="loadHighscoresBtn">Load Highscores</button>
+
+      <div class="dropdown">
+        <button id="exportBtn">Export</button>
+        <div class="dropdown-content">
+          <a href="#" id="exportSpreadsheet">Export to Spreadsheet</a>
+        </div>
+      </div>
+    </div>
 
     <section id="skillsSection">
       <h2>Skills</h2>
