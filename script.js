@@ -22,6 +22,13 @@ const skills = [
     'wintertodt', 'zalcano', 'zulrah'
   ];
   
+  const activities = [
+    'league_points', 'bounty_hunter_hunter', 'bounty_hunter_rogue', 'clue_scrolls_all', 
+    'clue_scrolls_beginner', 'clue_scrolls_easy', 'clue_scrolls_medium', 'clue_scrolls_hard', 
+    'clue_scrolls_elite', 'clue_scrolls_master', 'last_man_standing', 'pvp_arena', 
+    'soul_wars_zeal', 'guardians_of_the_rift', 'colosseum_glory'
+  ];
+  
   // Helper function to delay between API calls
   const delay = ms => new Promise(res => setTimeout(res, ms));
   
@@ -71,10 +78,21 @@ const skills = [
     }
   }
   
-  // Function to load both skills and bosses
+  // Function to load the activities data
+  async function loadActivities() {
+    const table = document.getElementById('activitiesTable');
+    table.innerHTML = ''; // Clear table before populating
+    for (let i = 0; i < activities.length; i++) {
+      await fetchWiseOldManData('activity', activities[i], 'activitiesSection', 'activitiesTable');
+      await delay(100); // Ensure we're staying under the API rate limit
+    }
+  }
+  
+  // Function to load both skills, bosses, and activities
   function loadHighscores() {
     loadSkills();
     loadBosses();
+    loadActivities();
   }
   
   // Add event listener to the button
